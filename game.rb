@@ -26,4 +26,30 @@ class Game
     puts "---- GAME OVER -----"
     puts "Good bye!"
   end
+
+  @@turn = 0;
+  def start(p1, p2)
+    player = (@@turn % 2 == 0) ? p1 : p2
+    puts "----- NEW TURN -----"
+    q = Question.new
+    puts "#{player.name}: #{q.question}"
+    print '> '
+
+    answer = gets.chomp.to_i
+    if answer == q.answer
+      puts 'YES! You are correct!'
+    else 
+      player.score -= 1
+      puts "Seriously? No!"
+    end
+    
+    if (p1.score == 0)
+      puts "#{p2.name} wins with a score of #{p2.score}/3"
+      puts "---- GAME OVER -----"
+      puts "Good bye!"
+    else 
+      puts "#{p1.name}: #{p1.score}/3 vs #{p1.name}: #{p2.score}/3"
+      start(p1, p2)
+  end
+
 end

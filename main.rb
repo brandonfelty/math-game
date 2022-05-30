@@ -2,27 +2,6 @@ require './question'
 require './game'
 require './player'
 
-# q1 = Question.new()
-# pp q1
-
-# q2 = Question.new()
-# pp q2
-
-# p1 = Player.new(1)
-# pp p1
-
-# p2 = Player.new(2)
-# pp p2
-
-# puts p1.lose?
-
-# p1.score = 0
-
-# puts p1.lose?
-
-# g1 = Game.new()
-# pp g1
-
 p1 = Player.new(1)
 p2 = Player.new(2)
 g1 = Game.new()
